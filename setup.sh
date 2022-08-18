@@ -1,1 +1,1 @@
-sed -i '/USER=gitpod/a eval $(alr printenv)' /ide/startup.sh
+sed -i '/USER=gitpod/a alr version > /ide/debug.txt; cd /workspace/AdaBots_examples; alr toolchain --select gnat_native && alr toolchain --select gprbuild; alr build; eval $(alr printenv)' /ide/startup.sh
